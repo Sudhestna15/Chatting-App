@@ -8,7 +8,7 @@
     android:gravity="center"
     android:layout_margin="20dp"
     android:weightSum="100"
-    tools:context=".LoginPhoneNumberActivity">
+    tools:context=".OtpActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
             android:layout_height="32dp"
             android:layout_margin="10dp"
             android:background="@drawable/circular_bg"
-            android:backgroundTint="@color/my_primary"
+            android:backgroundTint="@color/gray"
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
             android:layout_height="32dp"
             android:layout_margin="10dp"
             android:background="@drawable/circular_bg"
-            android:backgroundTint="@color/gray"
+            android:backgroundTint="@color/my_primary"
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -84,7 +84,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter mobile Number"
+        android:text="Enter otp sent to your mobile"
         android:layout_gravity="center_vertical"
         android:letterSpacing="0.08"
         android:layout_weight="5"
@@ -92,38 +92,31 @@
         android:textSize="25sp"/>
 
 
-     <LinearLayout
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:orientation="horizontal"
-         android:gravity="center"
-         android:layout_weight="5"
-         >
-
-        <com.hbb20.CountryCodePicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:ccp_showFlag="false"
-            app:ccp_showNameCode="false"
-            android:id="@+id/login_countrycode"
-
-            />
-
-
-
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:hint="Mobile"
-        android:id="@+id/login_mobile_number"
-        android:inputType="phone"
-        android:padding="10dp"
-        android:background="@drawable/edittextrounded"
-        android:elevation="5dp"
-         />
+        android:orientation="horizontal"
+        android:layout_weight="5"
+        >
 
-     </LinearLayout>
+
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="OTP"
+            android:id="@+id/otp_btn"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="10dp"
+            android:background="@drawable/edittextrounded"
+            android:elevation="5dp"
+            />
+
+    </LinearLayout>
 
 
     <LinearLayout
@@ -131,13 +124,13 @@
         android:layout_height="100dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        android:layout_weight="20"
+        android:layout_weight="10"
         >
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Send otp"
-            android:id="@+id/otp_btn"
+            android:text="Next"
+            android:id="@+id/otp_next"
             android:background="@drawable/btn_rounded"
             />
 
@@ -149,6 +142,15 @@
             android:id="@+id/progressbar_btn"
             />
     </LinearLayout>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:gravity="center"
+        android:text="Resend OTP in 30sec"
+        android:id="@+id/resend_otp"
+        />
 
 
 
