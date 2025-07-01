@@ -143,6 +143,8 @@ public class OtpActivity extends AppCompatActivity {
                     runOnUiThread(() -> {
                         resendOtpTextView.setEnabled(true);
                     });
+
+
                 }
             }
         },0,1000);
