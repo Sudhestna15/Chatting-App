@@ -77,9 +77,8 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/baseline_account_circle_24"
-        android:tint="@color/my_primary"
         android:layout_weight="20"
-        />
+        app:tint="@color/my_primary" />
 
     <TextView
         android:layout_width="match_parent"
@@ -105,11 +104,11 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_margin="10dp"
             android:hint="Username"
             android:id="@+id/login_username"
-            android:inputType="number"
+            android:inputType="text"
             android:maxLength="6"
             android:padding="10dp"
             android:background="@drawable/edittextrounded"
@@ -139,7 +138,7 @@
             android:layout_height="wrap_content"
             android:indeterminateTint="@color/my_primary"
             android:layout_gravity="center"
-            android:id="@+id/progressbar_btn"
+            android:id="@+id/login_progress_bar"
             />
     </LinearLayout>
 

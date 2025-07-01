@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.chattingapp.utils.FirebaseUtil;
+
 public class SplashActivity extends AppCompatActivity {
 
     @Override
@@ -14,9 +16,13 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         new Handler().postDelayed(new Runnable(){
             public void run(){
-                startActivity(new Intent(SplashActivity.this,LoginPhoneNumberActivity.class));
-                finish();
-        }
-        },3000);
+                if(FirebaseUtil.isLoggedIn()) {
+                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                }else{
+                    startActivity(new Intent(SplashActivity.this, LoginPhoneNumberActivity.class));
+                }
+            finish();
+            }
+        },1000);
     }
 }
