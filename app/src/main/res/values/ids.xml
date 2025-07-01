@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="login_otp" type="id" />
+    <item name="login_next_btn" type="id" />
+    <item name="resend_otp_textveiw" type="id" />
+    <item name="login_progress_bar" type="id" />
+</resources>
