@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentSnapshot;
 
-public class Usernameactivity extends AppCompatActivity {
+public class UsernameActivity extends AppCompatActivity {
     EditText usernameInput;
     Button letMeInButton;
     ProgressBar progressBar;
@@ -50,17 +50,17 @@ public class Usernameactivity extends AppCompatActivity {
             return;
         }
         setInProgress(true);
-        if(userModel != null){
-            userModel.setUserName(username);
+        if(userModel!=null){
+            userModel.setUsername(username);
         }else{
-            userModel= new UserModel(phoneNumber, username, Timestamp.now()) ;
+            userModel = new UserModel(phoneNumber,username, Timestamp.now(),FirebaseUtil.currentUserId());
         }
         FirebaseUtil.currentUserDetails().set(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 setInProgress(false);
                 if(task.isSuccessful()){
-                    Intent intent = new Intent(Usernameactivity.this, MainActivity.class);
+                    Intent intent = new Intent(UsernameActivity.this, MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                 }
@@ -78,7 +78,7 @@ public class Usernameactivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     UserModel userModel= task.getResult().toObject(UserModel.class);
                     if(userModel != null){
-                        usernameInput.setText(userModel.getUserName());
+                        usernameInput.setText(userModel.getUsername());
                     }
                 }
             }
